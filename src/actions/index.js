@@ -1,14 +1,12 @@
-export const INCREMENT = 'INCREMENT'
-export const DECREMENT = 'DECREMENT'
+import axios from 'axios'
+import events from '../reducers/events'
 
-export const increment = () => {
-  return {
-    type: INCREMENT
-  }
-}
+export const READ_EVENTS = 'READ_EVENTS'
 
-export const decrement = () => {
-  return {
-    type: DECREMENT
-  }
+const ROOT_URL = 'https://udemy-utils.herokuapp.com/api/v1'
+const QUERYSTRING = '?token=token123'
+
+export const readEvents = () => async dispatch => {
+  const response = await axios.get(`${ROOT_URL}/events${QUERYSTRING}`)
+  dispatch({type: READ_EVENTS,response})
 }

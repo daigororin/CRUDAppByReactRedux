@@ -1,1 +1,2 @@
-# React-Redux-Pra[WIP]
+# [WIP]CRUD application by React-Redux
+* Create CRUD application by React-Redux
